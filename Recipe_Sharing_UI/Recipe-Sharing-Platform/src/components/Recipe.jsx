@@ -1,15 +1,20 @@
 /* eslint-disable react/prop-types */
 import { Button, Typography, Grid, Card, CardMedia, CardContent, CardActions, IconButton, Rating, Stack } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useNavigate } from 'react-router-dom';
 
 const Recipe = ({ recipe , handleFavoriteToggle }) => {
+  const navigate = useNavigate();
+  const handleViewRecipe = () => {
+    navigate(`/main/recipe`, { state:  {recipe} });
+  }; 
   return (
     <Grid item xs={12} sm={6} lg={4}>
       <Card sx={{ borderRadius: 2, boxShadow: '0 3px 10px rgba(0,0,0,0.1)', transition: 'transform 0.3s', '&:hover': { transform: 'scale(1.05)' } }}>
         <CardMedia
           component="img"
           height="200"
-          image={recipe.recipe_image}
+          image={`data:image/png;base64,${recipe.recipe_image}`}
           alt={recipe.recipe_name}
         />
         <CardContent>
@@ -34,7 +39,7 @@ const Recipe = ({ recipe , handleFavoriteToggle }) => {
           <IconButton aria-label="add to favorites" onClick={()=>{handleFavoriteToggle(recipe)}}>
             <FavoriteIcon sx={{ color: recipe.is_favorite ? '#e57373' : '#ccc' }} />
           </IconButton>
-          <Button size="small" sx={{ color: '#673ab7' }}>View Recipe</Button>
+          <Button size="small" sx={{ color: '#673ab7' }} onClick={handleViewRecipe}>View Recipe</Button>
         </CardActions>
       </Card>
     </Grid>

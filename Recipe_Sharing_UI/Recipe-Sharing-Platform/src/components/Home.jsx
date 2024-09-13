@@ -55,7 +55,6 @@ const Home = () => {
 
   function onFavoriteToggle(recipe) {
     const updatedRecipe = { ...recipe, is_favorite: !recipe.is_favorite };
-    console.log(updatedRecipe.is_favorite);
     dispatch(
       toggleFavoriteRecipe({
         recipe_id: updatedRecipe.recipe_id,
@@ -63,7 +62,6 @@ const Home = () => {
       })
     )
       .then(() => {
-        console.log("component");
         dispatch(
           submittedRecipeActions.toggleFavorite({
             recipe_id: updatedRecipe.recipe_id,

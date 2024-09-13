@@ -108,6 +108,7 @@ const Category = () => {
             autoWidth
             label="Category"
           >
+            <MenuItem value="">None</MenuItem>
             <MenuItem value="Appetizer">Appetizer</MenuItem>
             <MenuItem value="Main Course">Main Course</MenuItem>
             <MenuItem value="Dessert">Dessert</MenuItem>
@@ -139,6 +140,7 @@ const Category = () => {
             autoWidth
             label="Tag"
           >
+            <MenuItem value="">None</MenuItem>
             <MenuItem value="Vegan">Vegan</MenuItem>
             <MenuItem value="Gluten-Free">Gluten-Free</MenuItem>
             <MenuItem value="Spicy">Spicy</MenuItem>

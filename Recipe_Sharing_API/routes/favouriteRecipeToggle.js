@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    console.log("entered");
     const authHeader = req.headers["authorization"];
     if (!authHeader) {
       return res.status(401).json({ message: "Authorization header missing" });
@@ -17,7 +16,6 @@ router.post("/", async (req, res) => {
     }
     const userId = getUserIdFromToken(token);
     const { recipe_id , recipe_add } = req.body;
-    console.log(recipe_id+","+recipe_add+","+req.body);
     let result = 0;
     if(recipe_add){
       result = await addFavourite(userId, recipe_id);

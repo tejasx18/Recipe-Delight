@@ -3,13 +3,14 @@ import featuredRecipeReducer from "./featuredRecipeSlice";
 import submittedRecipeReducer from "./submittedRecipeSlice";
 import favouriteRecipeReducer from "./favouriteRecipeSlice";
 import categoryRecipeReducer from "./categoryRecipeSlice";
-
+import userDataReducer from "./userDataSlice";
 
 const appReducer = combineReducers({
   featuredRecipes: featuredRecipeReducer,
   submittedRecipes: submittedRecipeReducer,
   favouriteRecipes: favouriteRecipeReducer,
   categoryRecipes: categoryRecipeReducer,
+  userData: userDataReducer,
 })
 
 const rootReducer = (state, action) => {

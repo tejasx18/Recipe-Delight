@@ -29,7 +29,7 @@ const Header = () => {
             </Typography>
           </Stack>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-            <InputBase
+            {/* <InputBase
               placeholder="Search recipes..."
               endAdornment={
                 <InputAdornment position="end">
@@ -44,7 +44,7 @@ const Header = () => {
                 padding: '0 16px',
                 color: '#673ab7',
               }}
-            />
+            /> */}
           </Box>
           <Button
               variant="outlined"

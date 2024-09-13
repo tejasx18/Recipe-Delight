@@ -56,6 +56,28 @@ const categoryRecipeSlice = createSlice({
         stateRecipe.is_favorite = is_favorite;
       }
     },
+    changeStatus : (state) => {
+      state.status='idle';
+    },
+    updateRecipeRating : (state,action) => {
+      const { recipe_id , rating } = action.payload;
+      const stateRecipe = state.recipes.find((recipe)=> recipe.recipe_id === recipe_id);
+      if(stateRecipe){
+        stateRecipe.user_rating = rating;
+        state.status='idle';
+      }
+    },
+    updateRecipeComment : (state,action) => {
+      const { recipe_id , comment } = action.payload;
+      const stateRecipe = state.recipes.find((recipe)=> recipe.recipe_id === recipe_id);
+      if(stateRecipe){
+        if (!Array.isArray(stateRecipe.comments)) {
+          stateRecipe.comments = [];
+        }
+        stateRecipe.comments.push(comment);
+        state.status='idle';
+      }
+    },
   },
   extraReducers: (builder) => {
     builder

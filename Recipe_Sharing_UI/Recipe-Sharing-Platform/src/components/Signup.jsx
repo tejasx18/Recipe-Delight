@@ -74,7 +74,6 @@ function Signup() {
 			const { data: res } = await axios.post(url, data);
 			navigate("/");
 		} catch (error) {
-      console.log(error);
 			if (
 				error.response &&
 				error.response.status >= 400 &&

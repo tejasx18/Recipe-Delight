@@ -9,8 +9,10 @@ import App from './App';
 import PrivateRoute from './components/PrivateRoute';
 import Home from './components/Home';
 import Profile from './components/Profile'
-import {fetchFeaturedRecipeLoader} from './loaders/recipeLoader';
+import {fetchFeaturedRecipeLoader , fetchUserDataLoader} from './loaders/recipeLoader';
 import Category from './components/Category';
+import UploadRecipe from './components/UploadRecipe';
+import DetailedRecipe from './components/DetailedRecipe';
 
 
 const router = createBrowserRouter([
@@ -46,6 +48,7 @@ const router = createBrowserRouter([
             <Profile />
           </PrivateRoute>
         ),
+        loader: fetchUserDataLoader,
       }, 
       {
         path: '/main/category',
@@ -63,6 +66,22 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       }, 
+      {
+        path: '/main/upload',
+        element: (
+          <PrivateRoute>
+            <UploadRecipe />
+          </PrivateRoute>
+        ),
+      }, 
+      {
+        path: '/main/recipe',
+        element: (
+          <PrivateRoute>
+            <DetailedRecipe />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {

@@ -10,15 +10,6 @@ import Error from "./Error";
 import { Alert, Box, CircularProgress, Grid } from "@mui/material";
 import Recipe from "./Recipe";
 
-// const recipe =[{
-//   recipe_id : "5",
-//   recipe_name : "Vegetable Stir Fry",
-//   recipe_image : "http://example.com/recipe5.jpg",
-//   recipe_description : "Stir-fried vegetables in a savory sauce.",
-//   average_rating : "4.2000000000000000",
-//   is_favorite : "false",
-//   tags : ["Absolutely loved it!","This recipe is a keeper.","Very flavorful and easy to prepare.","Yummy and quick."]
-// }];
 
 const SubmittedRecipe = () =>{
   const dispatch = useDispatch();
